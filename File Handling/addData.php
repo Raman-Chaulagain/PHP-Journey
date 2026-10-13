@@ -5,7 +5,7 @@
     $username = $_POST['username'];
     $password = $_POST['password'];
 
-    $encryptedpass = md5($password); //encryption
+    $encryptedpass = password_hash($password, PASSWORD_BCRYPT); //encryption using BCRYPT
 
     $sql = "INSERT INTO register(username,password) VALUES('$username','$encryptedpass')";
     $check = mysqli_query($connection,$sql);

@@ -13,7 +13,7 @@
 
         if(mysqli_num_rows($check) > 0){
 
-            if(md5($password) == $encryptedpass){ // decryption
+            if(password_verify($password,$encryptedpass)){ // decryption using BCRYPT
                 echo "correct password";
             }
             
