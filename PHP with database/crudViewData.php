@@ -33,12 +33,10 @@
             &language=<?php echo $result['language']; ?>&address=<?php echo $result['address']; ?>"  class=""btn btn-success">update</a></td>
             <td><a href = "#" class="btn btn-danger">delete</a></td>
           </tr>
-
-
           <?php
         }
     }
-    
+
 
 ?>
 
