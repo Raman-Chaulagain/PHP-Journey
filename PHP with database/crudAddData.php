@@ -15,8 +15,14 @@
 
         $lang = implode(", ",$language);
 
-        $sql = "INSERT INTO cruddata (name, email, password, qualification, gender, language, address)
-    	        VALUES ('$name','$email','$password','$qualification','$gender','$lang','$address')";
+        $filename = $_FILES['Images']['name'];
+        $tempname = $_FILES['Images']['tmp_name'];
+        $destination = 'Upload/'.$filename;
+
+        move_uploaded_file($tempname, $destination);
+
+        $sql = "INSERT INTO cruddata (name, email, password, qualification, gender, language, address,Image)
+    	        VALUES ('$name','$email','$password','$qualification','$gender','$lang','$address','$filename')";
 
 
         $check = mysqli_query($con,$sql);

@@ -27,6 +27,7 @@
             <td><?php echo $result['gender'];?></td>
             <td><?php echo $result['language'];?></td>
             <td><?php echo $result['address'];?></td>
+            <td><img src = "Upload/<?php echo $result['Image'];?>" width="100" height="50"></td>
             <td><a href = "crudform.php?id=<?php echo $result['ID'];?>&name=<?php echo $result['name']; ?>&email=<?php echo $result['email']; ?>
             &password=<?php echo $result['password']; ?>&qualification=<?php echo $result['qualification']; ?>&gender=<?php echo $result['gender']; ?>
             &language=<?php echo $result['language']; ?>&address=<?php echo $result['address']; ?>"  class=""btn btn-success">update</a></td>

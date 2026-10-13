@@ -21,7 +21,7 @@
 
     <h2>Registration Form</h2>
 
-     <form action = "crudAddData.php" method="POST">
+     <form action = "crudAddData.php" method="POST" enctype="multipart/form-data">
     
    
    
@@ -85,6 +85,8 @@
         <input type="checkbox" id="cpp" name="language[]" value="cpp" <?php if(in_array("cpp",$lang)){ echo "checked"; }?>>
         <label for="cpp">C++</label>
 
+        <input type="file" id="cpp" name="Images" value="images">
+        <label for="image"></label>
         <br><br>
 
         <!-- Address -->
