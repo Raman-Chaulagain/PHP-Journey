@@ -5,15 +5,18 @@
     if(isset($_POST['login'])){
         $username = $_POST['username'];
         $password = $_POST['password'];
-        $sql = "SELECT username,password FROM register WHERE username = '$username' AND password = '$password'";
-        $check = mysqli_query($con,$sql);
+        $sql = "SELECT username,password FROM register WHERE username = '$username'";
+        $check = mysqli_query($connection,$sql);
         $result = mysqli_fetch_assoc($check);
         $user = $result['username'];
-        $pass = $result['password'];
+        $encryptedpass = $result['password'];
+
         if(mysqli_num_rows($check) > 0){
-            session_start();
-            $_SESSION['username'] = $user;
-            header("location:Welcome.php");
+
+            if(md5($password) == $encryptedpass){ // decryption
+                echo "correct password";
+            }
+            
         }
         else{
             header("location:login.php");

@@ -4,8 +4,11 @@
 
     $username = $_POST['username'];
     $password = $_POST['password'];
-    $sql = "INSERT INTO register(username,password) VALUES('$username','$password')";
-    $check = mysqli_query($con,$sql);
+
+    $encryptedpass = md5($password); //encryption
+
+    $sql = "INSERT INTO register(username,password) VALUES('$username','$encryptedpass')";
+    $check = mysqli_query($connection,$sql);
 
     if($check){
         echo "Data Inserted Successfully";

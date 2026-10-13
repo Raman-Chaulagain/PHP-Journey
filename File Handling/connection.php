@@ -1,5 +1,5 @@
 <?php
      
-    $connection = mysqli_connect("localhost",'root','','phpdatabase');
+    $connection = mysqli_connect("localhost",'root','','PHP database');
 
 ?>
