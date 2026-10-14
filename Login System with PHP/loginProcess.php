@@ -4,7 +4,7 @@
 
     if(isset($_POST['login'])){
 
-        // mysqli_real_escape_string($con,$method['name']) prevents from sql injection.
+        // mysqli_real_escape_string($con,$method['keyname']) prevents from sql injection.
         $username = mysqli_real_escape_string($con, $_POST['username']) ;
         $password = mysqli_real_escape_string($con,$_POST['password']);
 
