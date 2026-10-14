@@ -15,4 +15,10 @@
     $filedata = fopen("demo.txt", "r");
     echo fgetc($filedata);
 
+    // end of file feof function 
+    while(!feof($filedata)){
+        echo fgets($filedata)."<br>";
+    }
+
+    fclose($filedata);
 ?>  
