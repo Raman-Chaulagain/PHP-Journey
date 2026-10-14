@@ -12,13 +12,21 @@
     // echo fgets($filedata,filesize("demo.txt"));
 
     // get a single character in php
-    $filedata = fopen("demo.txt", "r");
-    echo fgetc($filedata);
+    // $filedata = fopen("demo.txt", "r");
+    // echo fgetc($filedata);
 
     // end of file feof function 
-    while(!feof($filedata)){
-        echo fgets($filedata)."<br>";
-    }
+    // while(!feof($filedata)){
+    //     echo fgets($filedata)."<br>";
+    // }
 
-    fclose($filedata);
+    // fclose($filedata);
+
+    $fileName = fopen("tutorial.txt","w");
+    fwrite($fileName,"hello there");
+
+
+
+
+
 ?>  
