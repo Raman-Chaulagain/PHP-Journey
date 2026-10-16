@@ -20,18 +20,17 @@
             if($data->num_rows>0){
                 $arr = array();
                 while($result=$data->fetch_assoc()){
-                    $arr = $result;
+                    $arr[] = $result;
                 }
                 return $arr;
             }
             else{
-                echo "no exist";
+                return [];
             }
         }
     }
 
     $obj = new queries();
     $fetch_data = $obj->getData();
-    print_r($fetch_data);
 
 ?>
