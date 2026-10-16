@@ -34,7 +34,7 @@
             $uname = $data['name'];
             $uemail = $data['email'];
             $upass = $data['password'];
-            $sql = "INSERT INTO data(userid,username,useremail,userpass) VALUES('$userid','$$uname','$uemail','$upass')";
+            $sql = "INSERT INTO data(userid,username,useremail,userpass) VALUES('$userid','$uname','$uemail','$upass')";
             $data = $this->connect()->query($sql);
 
 
@@ -47,6 +47,15 @@
             }
 
         }
+
+
+        public function showdataupdate($id){
+            $sql = "SELECT * FROM data WHERE userid = $id";
+            $data = $this->connect()->query($sql);
+            $result=$data->fetch_assoc();
+
+            return $result;
+        }
     }
 
     $obj = new queries();
@@ -56,4 +65,5 @@
     if(isset($_POST['submit'])){
         $obj-> adddata($_POST);
     }
+
 ?>

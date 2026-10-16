@@ -52,7 +52,7 @@
                     <td><?php echo $arr['username']; ?></td>
                     <td><?php echo $arr['useremail']; ?></td>
                     <td><?php echo $arr['userpass']; ?></td>
-                    <td><a href="">Edit</a><td>
+                    <td><a href="form.php?id=<?php echo $arr['userid']; ?>">Edit</a><td>
                     <a href="">Delete</a>
                 </tr>
             <?php } ?>
