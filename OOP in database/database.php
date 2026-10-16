@@ -28,9 +28,32 @@
                 return [];
             }
         }
+
+        public function adddata($data){
+            $userid = mt_rand(1111,9999);
+            $uname = $data['name'];
+            $uemail = $data['email'];
+            $upass = $data['password'];
+            $sql = "INSERT INTO data(userid,username,useremail,userpass) VALUES('$userid','$$uname','$uemail','$upass')";
+            $data = $this->connect()->query($sql);
+
+
+            
+            if($data){
+                echo "Inserted Successfully";
+            }
+            else{
+                echo "Unable to insert them successfully";
+            }
+
+        }
     }
 
     $obj = new queries();
     $fetch_data = $obj->getData();
 
+
+    if(isset($_POST['submit'])){
+        $obj-> adddata($_POST);
+    }
 ?>

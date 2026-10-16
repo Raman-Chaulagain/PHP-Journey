@@ -9,7 +9,7 @@
 <body>
 
     <h2>User Registration Form</h2>
-
+    <a href="view-data.php">View Data</a>
     <form action="database.php" method="POST">
         <label for="name">Name:</label>
         <input type="text" id="name" name="name" placeholder="Enter your name" required>
